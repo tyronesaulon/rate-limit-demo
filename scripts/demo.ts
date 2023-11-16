@@ -25,7 +25,6 @@ async function blast(n: number) {
   const errors = results.filter(
     (result) => result.status === 'rejected',
   ) as PromiseRejectedResult[];
-  errors.forEach((error) => console.error(error.reason));
   console.log(`success: ${n - errors.length} errors: ${errors.length}`);
 }
 
