@@ -1,4 +1,4 @@
-import { IsInt, IsNumber, IsString, IsUUID } from 'class-validator';
+import { IsEmail, IsInt, IsNumber, IsString, IsUUID } from 'class-validator';
 
 export class OrderCreatedDto {
   @IsUUID()
@@ -7,11 +7,14 @@ export class OrderCreatedDto {
   @IsString()
   name: string;
 
+  @IsEmail()
+  email: string;
+
   @IsString()
   description: string;
 
   @IsNumber()
-  price: number;
+  price: number; // cents
 
   @IsInt()
   quantity: number;
